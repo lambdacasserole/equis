@@ -1,0 +1,5 @@
+package equis
+
+modules = Equis
+sourcedir = src
+opts = "-p contrib"
