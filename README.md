@@ -21,5 +21,12 @@ Using this library, we can do so in Idris:
 
 This is the same system of linear equations used over on [Maths is Fun](https://www.mathsisfun.com/algebra/matrix-inverse.html) so you can check the solution over there if you don't believe me. The library uses the same well-known approach detailed in that tutorial.
 
+If we attempt to solve a system for which there is no solution, we will get `nan` back:
+
+```
+> :exec solve [[1.0, 1.0, 1.0], [1.0, 1.0, 1.0]] [6.0, 9.0]
+[nan, nan, nan]
+```
+
 ## References
 * Pierce, Rod,  2018, 'Solving Systems of Linear Equations Using Matrices', Math Is Fun, Available at: <http://www.mathsisfun.com/algebra/systems-linear-equations-matrices.html>. [Accessed 8 Feb 2019]
