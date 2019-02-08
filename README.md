@@ -18,3 +18,8 @@ Using this library, we can do so in Idris:
 > :exec solve [[1.0, 1.0, 1.0], [0.0, 2.0, 5.0], [2.0, 5.0, -1.0]] [6.0, -4.0, 27.0]
 [5, 3, -2]
 ```
+
+This is the same system of linear equations used over on [Maths is Fun](https://www.mathsisfun.com/algebra/matrix-inverse.html) so you can check the solution over there if you don't believe me. The library uses the same well-known approach detailed in that tutorial.
+
+## References
+* Pierce, Rod,  2018, 'Solving Systems of Linear Equations Using Matrices', Math Is Fun, Available at: <http://www.mathsisfun.com/algebra/systems-linear-equations-matrices.html>. [Accessed 8 Feb 2019]
