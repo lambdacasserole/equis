@@ -23,7 +23,7 @@ This is the same system of linear equations used over on [Maths is Fun](https://
 
 If we attempt to solve a system for which there is no solution, we will get `nan` back:
 
-```
+```idris
 > :exec solve [[1.0, 1.0, 1.0], [1.0, 1.0, 1.0]] [6.0, 9.0]
 [nan, nan, nan]
 ```
