@@ -28,5 +28,21 @@ If we attempt to solve a system for which there is no solution, we will get `nan
 [nan, nan, nan]
 ```
 
+## Polynomial Curve Fitting
+We can also perform least-squares polynomial curve fitting using this library. If we would like the result as a vector of coefficients, we can use `leastSquares`:
+
+```idris
+> :exec leastSquares : 3 [] []
+[]
+```
+
+To get a function of the form `f(x) = y` we can use `leastSquaresFn`:
+
+```idris
+> :let f = leastSquaresFn 3 [] []
+> :exec f 4
+0.000
+```
+
 ## References
 * Pierce, Rod,  2018, 'Solving Systems of Linear Equations Using Matrices', Math Is Fun, Available at: <http://www.mathsisfun.com/algebra/systems-linear-equations-matrices.html>. [Accessed 8 Feb 2019]
