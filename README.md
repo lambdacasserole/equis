@@ -47,7 +47,7 @@ To get a function of the form `f(x) = y` we can use `leastSquaresFn`:
 8.000000000016144 : Double
 ```
 
-**Note:** The above example using `LeastSquaresFn` doesn't work in the REPL because we're hitting a [piece of missing functionality](https://github.com/idris-lang/Idris-dev/blob/62bd431d58f1c2af394b684bb175328f4a44d2de/src/Idris/Erasure.hs#L366) in `Erasure.hs` for some reason. Instead, try the following:
+**Note:** The above example using `LeastSquaresFn` should work in compiled code, but doesn't work in the REPL because we're hitting a [piece of missing functionality](https://github.com/idris-lang/Idris-dev/blob/62bd431d58f1c2af394b684bb175328f4a44d2de/src/Idris/Erasure.hs#L366) in `Erasure.hs` for some reason. Instead, try the following:
 
 ```idris
 > :let coeffs = leastSquares 3 [1.0, 2.0, 3.0, 4.0] [4.0, 8.0, 4.0, 8.0]
