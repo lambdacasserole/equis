@@ -28,5 +28,34 @@ If we attempt to solve a system for which there is no solution, we will get `nan
 [nan, nan, nan]
 ```
 
+## Polynomial Curve Fitting
+We can also perform least-squares polynomial curve fitting using this library. If we would like the result as a vector of coefficients, we can use `leastSquares`:
+
+```idris
+> :let coeffs = leastSquares 3 [1.0, 2.0, 3.0, 4.0] [4.0, 8.0, 4.0, 8.0]
+> coeffs
+[-23.999999999999318, 45.3333333333336, -19.999999999999403, 2.6666666666667425] : Vect 4 Double
+```
+
+To get a function of the form `f(x) = y` we can use `leastSquaresFn`:
+
+```idris
+> :let f = leastSquaresFn 3 [1.0, 2.0, 3.0, 4.0] [4.0, 8.0, 4.0, 8.0]
+> f 3
+4.000000000008896 : Double
+> f 4
+8.000000000016144 : Double
+```
+
+**Note:** The above example using `LeastSquaresFn` should work in compiled code, but doesn't work in the REPL because we're hitting a [piece of missing functionality](https://github.com/idris-lang/Idris-dev/blob/62bd431d58f1c2af394b684bb175328f4a44d2de/src/Idris/Erasure.hs#L366) in `Erasure.hs` for some reason. Instead, try the following:
+
+```idris
+> :let coeffs = leastSquares 3 [1.0, 2.0, 3.0, 4.0] [4.0, 8.0, 4.0, 8.0]
+> sum (zipWith (*) (powers 3 3.0) coeffs)
+4.000000000008896 : Double
+> sum (zipWith (*) (powers 3 4.0) coeffs)
+8.000000000016144 : Double
+```
+
 ## References
 * Pierce, Rod,  2018, 'Solving Systems of Linear Equations Using Matrices', Math Is Fun, Available at: <http://www.mathsisfun.com/algebra/systems-linear-equations-matrices.html>. [Accessed 8 Feb 2019]
